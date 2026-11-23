@@ -22,4 +22,4 @@ Each `session_id` in ICFD-31k holds 10 conversations of the same scenario. If so
 We trained only on Piper voices and tested on calls rendered by a different system (MMS-TTS). The text-based models lost little (F1 within about 0.02 on clean audio); the audio-only model trained on clean audio collapsed (F1 0.67 to 0.23), showing audio branches can latch onto the voice system. Limit: MMS has only one voice, so "voices" there are pitch/speed variants, and the audio branch was close to chance anyway.
 
 **Did the acoustic branch help?**
-No. In our data the audio-only branch was near chance (AUROC about 0.55), and fusion matched the text-only model within seed noise. We report that as measured and explain it by the weak acoustic cue in synthetic speech.
+No. In our data the audio-only branch was near chance (AUROC about 0.55), and fusion matched the text-only model; with five seeds the paired differences were within about 0.02 AUROC and every confidence interval included zero. The early-detection advantage seen with three seeds reversed with five, so it was seed luck. We report that as measured and explain it by the weak acoustic cue in synthetic speech.

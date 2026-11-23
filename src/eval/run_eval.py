@@ -21,7 +21,10 @@ LATE = {"F-late": ("T-asr", "A"), "F-late-aug": ("T-asr-aug", "A-aug")}
 def runs():
     out = {}
     for p in glob.glob("results/runs/*/s*/summary.json"):
-        s = json.load(open(p)); out.setdefault(s["name"], {})[s["seed"]] = s
+        s = json.load(open(p))
+        if s["seed"] > 2 and not os.environ.get("EXTRA_SEEDS"):
+            continue    # primary tables use seeds 0-2 for every model; seeds 3-4 are only for the paired tests
+        out.setdefault(s["name"], {})[s["seed"]] = s
     return out
 
 

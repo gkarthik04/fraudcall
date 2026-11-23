@@ -22,7 +22,7 @@ Plain-language notes on every component: `docs/explain/`. Phase 0 findings (hard
 | F (fusion) | 0.874 / 0.959 | 0.837 / 0.915 | 0.703 / 0.795 |
 | F-aug (fusion + channel augmentation) | 0.857 / 0.955 | 0.803 / 0.914 | 0.632 / 0.805 |
 
-Codecs and packet loss barely hurt; noise-driven recognition errors do. The audio branch was near chance and fusion matched text-only within seed noise: H2, H3, H4 are not supported in this synthetic setting. Details, confidence intervals, ablations and error analysis: `report/report.md`, `results/tables.md`.
+Codecs and packet loss barely hurt; noise-driven recognition errors do. The audio branch was near chance and fusion matched text-only (five-seed paired tests: difference within about 0.02 AUROC, every confidence interval includes zero): H2, H3, H4 are not supported in this synthetic setting. Details, confidence intervals, ablations and error analysis: `report/report.md`, `results/tables.md`.
 
 ## Setup
 Python 3.11, CPU only (no GPU needed), ffmpeg on PATH.
@@ -39,7 +39,7 @@ make eval         # metric tables and figures (src/eval/run_eval.py, src/eval/fi
 make demo         # streamlit run src/demo/app.py
 make test         # unit tests (no session overlap, deterministic channel, model shapes)
 ```
-Extra scripts: `python -m scripts.make_demo` (checkpoints, thresholds, 6 samples), `python -m scripts.demo_backup` (records demo output on the 6 samples), `python -m scripts.demo_headless_test` (runs the Streamlit app headlessly), `python -m src.eval.error_analysis`, `python -m scripts.make_slides`, `python -m scripts.md_to_docx` (report.docx; report.pdf via LibreOffice).
+Extra scripts: `python -m scripts.make_demo` (checkpoints, thresholds, 6 samples), `python -m scripts.demo_backup` (records demo output on the 6 samples), `python -m scripts.demo_headless_test` (runs the Streamlit app headlessly), `bash scripts/train_extra_seeds.sh` then `python -m src.eval.extra_analysis` (seeds 3-4 and paired tests / alert rule), `python -m src.eval.calibration_threshold`, `python -m src.eval.tok512_compare`, `bash scripts/train_extra_seeds_aug.sh` (augmented-model seeds 3-4), `python -m src.eval.error_analysis`, `python -m scripts.make_slides`, `python -m scripts.md_to_docx` (report.docx; report.pdf via LibreOffice).
 
 ## Layout
 `configs/` YAML per experiment; `src/data` ICFD loading, splits, manifest builder; `src/tts` TTS wrappers and call assembly; `src/channel` phone-channel simulation; `src/asr` recogniser and WER; `src/features` log-mel and tokenization; `src/models` branches and fusion; `src/train` training loop; `src/eval` metrics, figures, error analysis; `src/demo` Streamlit app; `results/` logged runs and tables; `figures/` plots; `report/` report and slides; `notebooks/` Colab notebook for the optional T-rob baseline (not run).

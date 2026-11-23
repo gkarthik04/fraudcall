@@ -33,3 +33,5 @@
 
 ## Phase 8: report, slides, docs (done)
 * report/report.md (+ .docx/.pdf), report/slides.pptx (15 slides), docs/viva.md, docs/resume_lines.md, README.md, FINAL_SUMMARY.md.
+
+* Extra (3 h session): seeds 3-4 for T-asr, A, F; paired tests (H2: no difference), alert rule and five-seed H4 check (3-seed gap reversed). See results/extra_analysis.md.

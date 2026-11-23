@@ -22,16 +22,18 @@ A full pipeline for robust fraud-call detection on phone speech, CPU only:
 | hypothesis | verdict | evidence |
 |---|---|---|
 | H1 channel + ASR hurt text detection | partly supported | WER 14-16 % for codecs/loss vs 13.5 % clean, 34 % at 5 dB, 66 % hard; AUROC 0.96 -> 0.91 (5 dB) -> 0.80 (hard); codecs alone cost nothing measurable |
-| H2 acoustic branch recovers loss | not supported | audio-only AUROC ~0.55; F - T-asr: +0.028 F1 (hard), -0.009 (mean of 13 degraded), within seed noise |
-| H3 augmentation more robust | not supported | F-aug hard F1 0.632 vs F 0.703 (within noise); T-asr-aug no consistent gain |
-| H4 fused flags earlier | not supported beyond noise | flagged by 40 s: 0.476 vs 0.402 on average, per seed 0.62/0.51/0.30 vs 0.51/0.38/0.32 |
+| H2 acoustic branch recovers loss | not supported | audio-only AUROC ~0.55; F - T-asr over 5 seeds: mean of 13 degraded F1 -0.003 (95 % CI -0.022 to +0.016), AUROC -0.002 (-0.017 to +0.012), hard F1 +0.017 (-0.048 to +0.083); no paired p < 0.10 |
+| H3 augmentation more robust | not supported | 3 seeds: F-aug hard F1 0.632 vs F 0.703 (within noise); 5 seeds: hard AUROC +0.031 (text) / +0.025 (fusion) for augmentation, all CIs include 0, so no significant gain |
+| H4 fused flags earlier | not supported | flagged by 40 s: 3 seeds 0.476 vs 0.402, but 5 seeds 0.400 vs 0.435 (paired p = 0.65); a k-consecutive-step alert rule trades earliness for recall and does not favour fusion |
 | H5 unseen TTS | partly supported | clean F1 T-asr 0.881 -> 0.859, F 0.874 -> 0.869; clean-trained audio model 0.668 -> 0.231 |
 
 ## What could not be done, and why
 * **T-rob transformer baseline: not run.** Estimated CPU cost too high; Colab notebook `notebooks/T-rob_colab.ipynb` written but not executed (run it on a GPU runtime, upload `data/manifest/manifest.jsonl`, copy `results/runs/T-rob/` back, then `python -m src.eval.run_eval`).
 * **Telugu and Devanagari Hindi:** dropped. ICFD is Roman-script; Whisper tiny/base cannot transcribe Hindi (WER > 1); no Telugu TTS/ASR was tested.
 * **Genuine acoustic signal:** the injected pace cue is weak (measured speaking-rate AUROC 0.52), so the audio branch result says little about real acoustic cues.
-* **Ablations not run:** each channel factor trained alone (cut by the brief's priority order) and a 512-token text length (CPU cost). Run: audio/text branch removal, late vs early fusion, 10/30/60 s audio window, 128 vs 256 tokens, augmentation on/off (report Section 6).
+* **Extra seeds and alert rule (added):** T-asr, A and F have 5 seeds (`scripts/train_extra_seeds.sh`); `python -m src.eval.extra_analysis` writes `results/paired_tests.csv`, `results/alert_rule_summary.csv`, `results/extra_analysis.md`. Primary tables stay at seeds 0-2.
+* **More extras (added):** `python -m src.eval.calibration_threshold` (temperature scaling and threshold drift, `results/calibration_threshold.md`), `python -m src.eval.tok512_compare` (512 vs 256 text tokens, `results/tok512_compare.md`), `bash scripts/train_extra_seeds_aug.sh` (seeds 3-4 for the augmented models, H3 paired tests in `results/extra_analysis.md`).
+* **Ablations not run:** each channel factor trained alone (cut by the brief's priority order) (it needs new degraded training audio and about 2.4 h of recognition); the 512-token text check was run later and shows no gain (`results/tok512_compare.md`). Run: audio/text branch removal, late vs early fusion, 10/30/60 s audio window, 128 vs 256 tokens, augmentation on/off (report Section 6).
 * **Official ICFD splits** could not be used (99.5 % fraud in validation/test); we re-split. cross_domain was not used (it shares `session_id`s with train and validation).
 * **Real-call validation:** none; all audio is synthetic.
 * **Demo screenshots:** the slides use a figure of the demo pipeline's recorded output on the 6 samples, not browser screenshots; the app itself was run headlessly (`results/demo_headless.json`).

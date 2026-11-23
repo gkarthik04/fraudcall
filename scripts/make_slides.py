@@ -132,18 +132,25 @@ for m in ("T-clean", "T-asr", "A", "F", "T-asr-aug", "F-aug"):
         f, fs = ms(m, c, "f1"); a, _ = ms(m, c, "auroc"); r.append(f"{f:.2f}±{fs:.2f} / {a:.2f}")
     rows.append(r)
 table(s, rows, 0.6, 1.8, 12.1, colw=[2.5, 3.0, 3.0, 3.6], size=16)
-bullets(s, ["Text carries the signal; the audio-only branch is near chance (AUROC ~0.55); fusion = text-only within seed noise"], y=5.6, h=1, size=18)
+bullets(s, ["Text carries the signal; the audio-only branch is near chance (AUROC ~0.55); fusion = text-only (5-seed paired test: all CIs include 0)"], y=5.6, h=1, size=18)
 # 10 robustness plot
 s = slide("Robustness across the channel grid (H1, H2)")
 img(s, "figures/h1_f1_vs_severity.png", 1.0, 1.4, w=11.3)
 # 11 TTD
 s = slide("Time-to-detection at 5 % false alarms (H4)", "Share of fraud calls flagged against seconds into the call (clean audio)")
 img(s, "figures/h4_time_to_detection_clean.png", 0.6, 1.6, h=4.9)
-bullets(s, ["Fused flags 0.48 vs 0.40 by 40 s on average,", "but per seed 0.62/0.51/0.30 vs 0.51/0.38/0.32:", "not distinguishable from seed noise", "Audio-only flags almost nothing"], x=7.6, y=2.0, w=5.3, size=18)
+bullets(s, ["3 seeds: fused 0.48 vs text 0.40 by 40 s;", "5 seeds: 0.40 vs 0.44 (paired p = 0.65):", "the early gap was seed luck, H4 not supported", "Audio-only flags almost nothing"], x=7.6, y=2.0, w=5.3, size=18)
 # 12 H3/H5
 s = slide("Augmentation (H3) and unseen TTS (H5)")
 img(s, "figures/h3_augmentation_hard.png", 0.4, 1.5, w=6.2); img(s, "figures/h5_unseen_tts.png", 6.7, 1.7, w=6.4)
-bullets(s, ["H3: no reliable gain from augmentation", "H5: text/fused F1 within ~0.02 on a different TTS; clean-trained audio model collapsed (0.67 -> 0.23)"], y=5.6, h=1.5, size=16)
+bullets(s, ["H3: no significant gain from augmentation (5 seeds: hard AUROC +0.02-0.03, CIs include 0)", "H5: text/fused F1 within ~0.02 on a different TTS; clean-trained audio model collapsed (0.67 -> 0.23)"], y=5.6, h=1.5, size=16)
+# 12b extra checks
+s = slide("Extra checks with more seeds", "Paired by seed; 95 % confidence intervals (src/eval/extra_analysis.py)")
+bullets(s, ["H2, 5 seeds: fusion minus text-only is about 0 (mean over 13 degraded: F1 -0.003, CI -0.022 to +0.016); every CI includes 0",
+            "H4, 5 seeds: fused flags 0.40 vs text 0.44 of fraud calls by 40 s (p = 0.65); the 3-seed edge was seed luck",
+            "H3, 5 seeds: augmentation hard AUROC +0.03 (text) / +0.025 (fusion), CIs include 0: weak hint, not significant",
+            "512 vs 256 text tokens: no consistent gain (mean degraded AUROC 0.933 vs 0.944)",
+            "Temperature scaling fitted on validation lowers ECE on noisy audio (hard: F 0.28 -> 0.19); a single threshold cannot fix drift"], size=18)
 # 13 demo
 s = slide("Demo (local Streamlit app)", "Upload WAV/MP3 or pick a held-out test call; choose a phone channel; see scores build up")
 img(s, "figures/demo_output.png", 0.4, 1.9, w=7.8)
@@ -153,7 +160,7 @@ s = slide("Limitations")
 bullets(s, ["Trained and evaluated on synthetic speech generated from dataset transcripts: results may not transfer to real calls",
             "Weak acoustic cue in synthetic voices (measured speaking-rate AUROC 0.52) explains the audio branch result",
             "Small ASR (Whisper base), 60 s cap, 30 scenarios, label noise in ICFD; 124 test calls, differences within noise not claimed",
-            "T-rob transformer baseline, Telugu and Devanagari Hindi not done"], size=19)
+            "T-rob transformer baseline, Telugu and Devanagari Hindi, and channel factors trained alone not done"], size=19)
 # 15 conclusion
 s = slide("Conclusion")
 bullets(s, ["Codecs and packet loss barely hurt transcript detection; noise-driven recognition errors do (AUROC 0.96 -> 0.91 at 5 dB, 0.80 in the worst case)",

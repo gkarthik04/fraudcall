@@ -12,6 +12,7 @@ E = {
  # ablations
  "F-aug-win10": dict(kind="fusion", text_source="asr", train_conds=A3, lr=5e-4, epochs=5, audio_window=10, init_text="T-asr-aug", init_audio="A-aug"),
  "F-aug-win60": dict(kind="fusion", text_source="asr", train_conds=A3, lr=5e-4, epochs=5, audio_window=60, init_text="T-asr-aug", init_audio="A-aug"),
+ "T-asr-tok512": dict(kind="text", text_source="asr", train_conds=C, lr=2e-3, epochs=8, text_tokens=512),
  "F-aug-tok128": dict(kind="fusion", text_source="asr", train_conds=A3, lr=5e-4, epochs=5, text_tokens=128, init_text="T-asr-aug", init_audio="A-aug"),
 }
 for n, e in E.items():
