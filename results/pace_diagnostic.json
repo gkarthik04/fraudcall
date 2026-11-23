@@ -1,0 +1,15 @@
+{
+ "n_calls_train_val_clean": 676,
+ "fraud_rate_by_pace_label": {
+  "fast": 0.8202764976958525,
+  "normal": 0.32808988764044944,
+  "slow": 0.9285714285714286
+ },
+ "auroc_pace_label_from_metadata": 0.6901998371891496,
+ "auroc_words_per_sec_whole_call": 0.5210559946780109,
+ "auroc_agent_speech_rate_measured_in_audio": 0.515427641080854,
+ "agent_rate_mean_sd": [
+  3.862591701451704,
+  0.5368518850223314
+ ]
+}

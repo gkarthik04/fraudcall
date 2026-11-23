@@ -1,0 +1,168 @@
+{
+ "tts": [
+  {
+   "model": "piper_en_libritts_r",
+   "conv": "en_hing",
+   "audio_sec": 18.78,
+   "compute_sec": 6.0,
+   "rtf_audio_per_compute": 3.13,
+   "sr": 22050,
+   "wav": "tmp_phase0/piper_en_libritts_r_en_hing.wav"
+  },
+  {
+   "model": "piper_en_libritts_r",
+   "conv": "en",
+   "audio_sec": 27.75,
+   "compute_sec": 1.96,
+   "rtf_audio_per_compute": 14.18,
+   "sr": 22050,
+   "wav": "tmp_phase0/piper_en_libritts_r_en.wav"
+  },
+  {
+   "model": "piper_hi_pratham",
+   "conv": "hi",
+   "audio_sec": 17.16,
+   "compute_sec": 1.17,
+   "rtf_audio_per_compute": 14.69,
+   "sr": 22050,
+   "wav": "tmp_phase0/piper_hi_pratham_hi.wav"
+  },
+  {
+   "model": "mms_eng",
+   "conv": "en_hing",
+   "audio_sec": 28.25,
+   "compute_sec": 34.86,
+   "rtf_audio_per_compute": 0.81,
+   "sr": 16000,
+   "wav": "tmp_phase0/mms_eng_en_hing.wav"
+  },
+  {
+   "model": "mms_eng",
+   "conv": "en",
+   "audio_sec": 36.89,
+   "compute_sec": 44.49,
+   "rtf_audio_per_compute": 0.83,
+   "sr": 16000,
+   "wav": "tmp_phase0/mms_eng_en.wav"
+  },
+  {
+   "model": "mms_hin",
+   "conv": "hi",
+   "audio_sec": 20.24,
+   "compute_sec": 23.16,
+   "rtf_audio_per_compute": 0.87,
+   "sr": 16000,
+   "wav": "tmp_phase0/mms_hin_hi.wav"
+  }
+ ],
+ "asr": [
+  {
+   "asr": "tiny",
+   "tts": "piper_en_libritts_r",
+   "conv": "en_hing",
+   "wer": 0.107,
+   "asr_sec": 1.44,
+   "asr_rtf_x": 13.07,
+   "hyp": " Hello, sir. This is Agent Kumar from Pun job National Bank.  We are updating our records and I need to verify some information with you, Jai.  A Chai S, of course. What do you need to know, sir?  Can"
+  },
+  {
+   "asr": "tiny",
+   "tts": "piper_en_libritts_r",
+   "conv": "en",
+   "wer": 0.23,
+   "asr_sec": 2.46,
+   "asr_rtf_x": 11.28,
+   "hyp": " NMS Sir, die. I am calling from Cadac Mahindrabank. We have detected a hive. I  transaction on your account. I need to verify this with you immediately.  Itch, Hathikai. What is the transaction a Mal"
+  },
+  {
+   "asr": "tiny",
+   "tts": "piper_hi_pratham",
+   "conv": "hi",
+   "wer": 1.156,
+   "asr_sec": 16.78,
+   "asr_rtf_x": 1.02,
+   "hyp": " Namaste, I am your bank, say you are in a condition of your family.  Really, how many rupee is rupee?  50-50 rupee.  Kripya, you know what is the meaning of the word?  I cannot tell you the meaning o"
+  },
+  {
+   "asr": "tiny",
+   "tts": "mms_eng",
+   "conv": "en_hing",
+   "wer": 0.107,
+   "asr_sec": 2.35,
+   "asr_rtf_x": 12.0,
+   "hyp": " Hell's Sir, this is Agent Kimor from Punga.  National Bank we are updating our records, and I need to verify some information with you,  Jai.  Ache.  Yes, of course, what do you need to know, sir?  C"
+  },
+  {
+   "asr": "tiny",
+   "tts": "mms_eng",
+   "conv": "en",
+   "wer": 0.264,
+   "asr_sec": 2.65,
+   "asr_rtf_x": 13.92,
+   "hyp": " The must-surt GI, I am calling from Cuffect Mahindra Bank.  We have detected a high value transaction on your account.  I need to verify this with you immediately.  Atethic High, what is the transact"
+  },
+  {
+   "asr": "tiny",
+   "tts": "mms_hin",
+   "conv": "hi",
+   "wer": 1.178,
+   "asr_sec": 12.36,
+   "asr_rtf_x": 1.64,
+   "hyp": " Namaste, I'm speaking back in your language.  In your story, one simple language is a language.  A good language is called a language.  If you want to change your language, tell us your own OTT.  So "
+  },
+  {
+   "asr": "base",
+   "tts": "piper_en_libritts_r",
+   "conv": "en_hing",
+   "wer": 0.067,
+   "asr_sec": 2.66,
+   "asr_rtf_x": 7.05,
+   "hyp": " Hello sir, this is Agent Kumar from Punjab National Bank.  We are updating our records and I need to verify some information with you, Jay.  A Chai-S of course. What do you need to know sir?  Can you"
+  },
+  {
+   "asr": "base",
+   "tts": "piper_en_libritts_r",
+   "conv": "en",
+   "wer": 0.195,
+   "asr_sec": 3.2,
+   "asr_rtf_x": 8.68,
+   "hyp": " NEMS Sir, Die, I am calling from Kotak Mahindra Bank.  We have detected a hive.  IU transaction on your account.  I need to verify this with you immediately.  Etch, hathikai.  What is the transaction"
+  },
+  {
+   "asr": "base",
+   "tts": "piper_hi_pratham",
+   "conv": "hi",
+   "wer": 1.067,
+   "asr_sec": 3.16,
+   "asr_rtf_x": 5.43,
+   "hyp": " نمسطے میں آپ کے بینک سے بول رہا ہوں  آپ کے خاتے میں ایک سندид لندین ہوا ہے  اچھا کتنے رپائے کا لندین ہے  پچاس سزار رپائے کا  قریبے آپ نہ اٹیپی بتائے  تاکی ہم سے روکسکے  میں اٹیپی نہیں بتا سکتا  میں ب"
+  },
+  {
+   "asr": "base",
+   "tts": "mms_eng",
+   "conv": "en_hing",
+   "wer": 0.093,
+   "asr_sec": 2.96,
+   "asr_rtf_x": 9.55,
+   "hyp": " Hello, sir. This is Agent Kimor from Punja.  National Bank, we are updating our records, and I need to verify some information with you, Jai.  Ashe, yes, of course, what do you need to know, sir?  Ca"
+  },
+  {
+   "asr": "base",
+   "tts": "mms_eng",
+   "conv": "en",
+   "wer": 0.218,
+   "asr_sec": 5.46,
+   "asr_rtf_x": 6.76,
+   "hyp": " The Mastzer, Jai, I am calling from Cuttecht, Mahindra Bank.  We have detected a high-value transaction on your account.  I need to verify this with you immediately.  At Atthic High, what is the tran"
+  },
+  {
+   "asr": "base",
+   "tts": "mms_hin",
+   "conv": "hi",
+   "wer": 1.156,
+   "asr_sec": 3.28,
+   "asr_rtf_x": 6.17,
+   "hyp": " Namaste, میں آپ کے بیک سے بول رہاں, آپ کے خاتے میں ایک سندد لیندین ہوئے.  اچھا کت نے روپے کا لیندین ہے.  چھاہت ہزار وہ پے کا کرپےیا اپنا او ٹیپی بتا یہ,  تاکی ہم کسے روک سکے.  میں او ٹیپی نہیں بتا سر"
+  }
+ ]
+}

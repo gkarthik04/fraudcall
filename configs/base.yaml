@@ -1,0 +1,42 @@
+# Base configuration shared by all stages. Experiment YAMLs in configs/ override pieces of it.
+seed: 1234
+paths:
+  raw_icfd: data/raw/icfd/source_conversations
+  processed: data/processed
+  audio: data/audio
+  manifest: data/manifest
+  piper_dir: data/models/piper
+  results: results
+data:
+  n_conversations: 800        # balanced fraud / not fraud, spread over domains and scenarios
+  max_per_session: 2          # at most this many conversations from one session_id
+  split: {train: 0.70, val: 0.15, test: 0.15}
+  pilot_n: 150                # Phase 1 pilot: a stratified subset of the final sample
+call:
+  max_seconds: 60
+  step_seconds: 10
+  turn_gap_seconds: [0.25, 0.6]
+tts:
+  set1: {engine: piper, model: en_US-libritts_r-medium, n_voices: 24}
+  set2: {engine: mms, model: facebook/mms-tts-eng}
+  pace_length_scale: {fast: 0.85, normal: 1.0, slow: 1.15}
+asr:
+  model: base
+  compute_type: int8
+  language: en
+  threads: 2
+  workers: 5
+channel:
+  train_codecs: [none, mulaw, alaw, gsm, opus8, opus12, amrnb]
+  train_snr_db: [5, 25]
+  train_loss_pct: [0, 15]
+  train_p_noise: 0.7
+  train_p_loss: 0.5
+  n_train_variants: 2
+features:
+  sr: 8000
+  n_mels: 64
+  n_fft: 400
+  hop: 160              # 20 ms
+  audio_window_s: 30
+  text_tokens: 256

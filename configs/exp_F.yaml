@@ -1,0 +1,13 @@
+exp:
+  patience: 2
+  kind: fusion
+  text_source: asr
+  train_conds:
+  - clean
+  lr: 0.0005
+  epochs: 5
+  init_text: T-asr
+  init_audio: A
+  name: F
+  batch_size: 32
+  max_samples_per_epoch: 2000

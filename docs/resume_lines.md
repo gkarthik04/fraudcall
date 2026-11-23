@@ -1,0 +1,7 @@
+# Resume lines (measured numbers only; blanks mean "not measured / not achieved")
+
+Source of every number: `results/summary_by_cond.csv`, `results/ttd.csv`, `results/tables.md`. Calls are synthetic speech generated from ICFD-31k transcripts, so say "synthetic" in any interview.
+
+1. Built an end-to-end fraud-call detection pipeline (Piper TTS -> simulated phone line -> faster-whisper ASR -> BiLSTM text branch + CNN-BiGRU audio branch -> fusion) on 800 ICFD-31k conversations, with session-grouped splits and 3-seed evaluation on CPU only.
+2. Stress-tested transcript-based detection across **14** phone-channel conditions (8 kHz, G.711 mu-law/A-law, GSM, AMR-NB, Opus 8/12 kbps, SNR 20/10/5 dB, 5/10 % packet loss, combined worst case) plus **4** conditions on audio from an unseen TTS system; found text-model AUROC falls from 0.96 (clean) to 0.91 at 5 dB noise and 0.80 in the worst combined condition (F1 0.88 -> 0.68), while codecs alone cost no measurable accuracy.
+3. Tested whether an acoustic branch recovers the loss: F1 recovered versus the transcript-only baseline = **+0.03 on the worst condition and -0.01 on average over the 13 degraded conditions (not distinguishable from seed noise; no recovery demonstrated)**; time-to-detection reduction at 5 % false alarms = **____ (not demonstrated: fused model flagged more fraud calls by 40 s in 2 of 3 seeds, 0.48 vs 0.40 on average, but seed spread is 0.30-0.62)**.

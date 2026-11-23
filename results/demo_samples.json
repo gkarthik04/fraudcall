@@ -1,0 +1,44 @@
+[
+ {
+  "id": "sample_1",
+  "cid": "batch_2025-10-13_01-02-16__SCENARIO_7_Clear_Fraud_0612_r1",
+  "wav": "data/demo_samples/sample_1.wav",
+  "label": 1,
+  "note": "fraud call the fused model scores correctly"
+ },
+ {
+  "id": "sample_2",
+  "cid": "batch_2025-10-13_01-36-50__SCENARIO_7_Clear_Fraud_0636_r1",
+  "wav": "data/demo_samples/sample_2.wav",
+  "label": 1,
+  "note": "fraud call the fused model scores correctly"
+ },
+ {
+  "id": "sample_3",
+  "cid": "batch_2025-10-13_01-36-50__SCENARIO_10_Clear_Fraud_0966_r1",
+  "wav": "data/demo_samples/sample_3.wav",
+  "label": 1,
+  "note": "hard case: fraud call near or below the decision threshold"
+ },
+ {
+  "id": "sample_4",
+  "cid": "batch_2025-10-13_02-35-27__SCENARIO_23_Ambiguous_but_Ultimately_Normal_2222_r1",
+  "wav": "data/demo_samples/sample_4.wav",
+  "label": 0,
+  "note": "normal call the fused model scores correctly"
+ },
+ {
+  "id": "sample_5",
+  "cid": "batch_2025-10-12_19-54-00__SCENARIO_14_Clear_Normal_1328_r1",
+  "wav": "data/demo_samples/sample_5.wav",
+  "label": 0,
+  "note": "normal call the fused model scores correctly"
+ },
+ {
+  "id": "sample_6",
+  "cid": "batch_2025-10-13_01-36-50__SCENARIO_20_Clear_Normal_1963_r1",
+  "wav": "data/demo_samples/sample_6.wav",
+  "label": 0,
+  "note": "normal call the fused model scores correctly"
+ }
+]

@@ -1,0 +1,42 @@
+{
+ "sample_1": {
+  "seconds": 6.4,
+  "metrics": [
+   [
+    "Fused verdict",
+    "FRAUD LIKELY"
+   ],
+   [
+    "First alert (fused)",
+    "30 s"
+   ],
+   [
+    "Processing time",
+    "4.5 s for 60 s of audio"
+   ]
+  ],
+  "info": [
+   "Ground truth for this held-out call: **FRAUD**  (fraud call the fused model scores correctly)"
+  ]
+ },
+ "sample_6": {
+  "seconds": 3.6,
+  "metrics": [
+   [
+    "Fused verdict",
+    "No fraud detected"
+   ],
+   [
+    "First alert (fused)",
+    "never"
+   ],
+   [
+    "Processing time",
+    "3.4 s for 52 s of audio"
+   ]
+  ],
+  "info": [
+   "Ground truth for this held-out call: **normal**  (normal call the fused model scores correctly)"
+  ]
+ }
+}

@@ -1,0 +1,11 @@
+exp:
+  patience: 2
+  kind: text
+  text_source: clean
+  train_conds:
+  - clean
+  lr: 0.002
+  epochs: 8
+  name: T-clean
+  batch_size: 32
+  max_samples_per_epoch: 2000

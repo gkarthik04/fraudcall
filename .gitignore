@@ -1,0 +1,25 @@
+data/
+tmp_phase0/
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.amr
+*.gsm
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.npy
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+.cache/
+runs/
+checkpoints/
+
+# not published: dataset transcript excerpts (ICFD licence), local logs and tooling
+results/error_analysis.json
+logs/
+.claude/

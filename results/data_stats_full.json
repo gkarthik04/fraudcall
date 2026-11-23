@@ -1,0 +1,202 @@
+{
+ "n_rows": 4260,
+ "n_calls_set1": 800,
+ "n_calls_set2": 124,
+ "by_split_label": {
+  "train/0": 281,
+  "train/1": 276,
+  "val/0": 58,
+  "val/1": 61,
+  "test/0": 61,
+  "test/1": 63
+ },
+ "by_domain": {
+  "bank_payment_fraud": 75,
+  "ecommerce_marketplace": 88,
+  "utility_bill_service": 79,
+  "job_employment": 77,
+  "loan_shark_harassment": 76,
+  "tech_support_account": 87,
+  "personal_emergency_extortion": 83,
+  "insurance_healthcare": 92,
+  "travel_lottery": 77,
+  "government_impersonation": 66
+ },
+ "n_scenarios": 30,
+ "n_sessions": 402,
+ "by_pace": {
+  "normal": 518,
+  "slow": 16,
+  "fast": 266
+ },
+ "by_cond_rows": {
+  "set1/alaw": 124,
+  "set1/amrnb": 124,
+  "set1/bw8k": 124,
+  "set1/clean": 800,
+  "set1/gsm": 124,
+  "set1/hard": 124,
+  "set1/loss10": 124,
+  "set1/loss5": 124,
+  "set1/mulaw": 124,
+  "set1/opus12": 124,
+  "set1/opus8": 124,
+  "set1/rand0": 676,
+  "set1/rand1": 676,
+  "set1/snr10": 124,
+  "set1/snr20": 124,
+  "set1/snr5": 124,
+  "set2/clean": 124,
+  "set2/gsm": 124,
+  "set2/hard": 124,
+  "set2/snr10": 124
+ },
+ "duration_s": {
+  "mean": 54.11506125000001,
+  "median": 60.0,
+  "min": 19.055,
+  "max": 60.0,
+  "hist_10s_bins": [
+   0,
+   1,
+   20,
+   59,
+   118,
+   602
+  ]
+ },
+ "wer_per_condition": {
+  "set1/alaw": {
+   "mean": 0.14027022612830523,
+   "median": 0.12315569792273345,
+   "n": 124
+  },
+  "set1/amrnb": {
+   "mean": 0.14925984565131212,
+   "median": 0.12753872633390706,
+   "n": 124
+  },
+  "set1/bw8k": {
+   "mean": 0.14120621858279894,
+   "median": 0.11942004708438972,
+   "n": 124
+  },
+  "set1/clean": {
+   "mean": 0.1354994109973698,
+   "median": 0.11692185325114338,
+   "n": 800
+  },
+  "set1/gsm": {
+   "mean": 0.15078074431539434,
+   "median": 0.13225576574242032,
+   "n": 124
+  },
+  "set1/hard": {
+   "mean": 0.66341403263481,
+   "median": 0.6684397163120568,
+   "n": 124
+  },
+  "set1/loss10": {
+   "mean": 0.1560052880549489,
+   "median": 0.1371363880574104,
+   "n": 124
+  },
+  "set1/loss5": {
+   "mean": 0.1482551858949349,
+   "median": 0.1315359477124183,
+   "n": 124
+  },
+  "set1/mulaw": {
+   "mean": 0.14135056179913685,
+   "median": 0.12376237623762376,
+   "n": 124
+  },
+  "set1/opus12": {
+   "mean": 0.14344056754641427,
+   "median": 0.12451550387596899,
+   "n": 124
+  },
+  "set1/opus8": {
+   "mean": 0.1493319027423972,
+   "median": 0.12736871547444234,
+   "n": 124
+  },
+  "set1/rand0": {
+   "mean": 0.18181367939956924,
+   "median": 0.15108145421076852,
+   "n": 676
+  },
+  "set1/rand1": {
+   "mean": 0.18070106759489443,
+   "median": 0.15184222423146473,
+   "n": 676
+  },
+  "set1/snr10": {
+   "mean": 0.22519762458024642,
+   "median": 0.20941306755260244,
+   "n": 124
+  },
+  "set1/snr20": {
+   "mean": 0.1545709089437606,
+   "median": 0.13771714694461476,
+   "n": 124
+  },
+  "set1/snr5": {
+   "mean": 0.33718818179831483,
+   "median": 0.31291984339583767,
+   "n": 124
+  },
+  "set2/clean": {
+   "mean": 0.19150803511682585,
+   "median": 0.17764286204294438,
+   "n": 124
+  },
+  "set2/gsm": {
+   "mean": 0.19953752992270718,
+   "median": 0.18504540991654395,
+   "n": 124
+  },
+  "set2/hard": {
+   "mean": 0.4420190952532923,
+   "median": 0.425704318643469,
+   "n": 124
+  },
+  "set2/snr10": {
+   "mean": 0.23255612294995415,
+   "median": 0.21920060119299234,
+   "n": 124
+  }
+ },
+ "gate": {
+  "clips_checked": 800,
+  "silent_or_short": [],
+  "clean_wer_mean": 0.1354994109973698,
+  "overlap_free": true,
+  "passed": true
+ },
+ "cost": {
+  "audio_gb_set1": 3.950803282,
+  "audio_mb_per_call_clean": 1.7317262525000001,
+  "asr_sec_per_call_mean": 16.269000000000002,
+  "build_synth_set1_pilot": {
+   "n": 150,
+   "elapsed_s": 75.38680958747864,
+   "workers": 5
+  },
+  "build_degrade_set1_pilot": {
+   "n_tasks": 703,
+   "elapsed_s": 2142.2201116085052,
+   "workers": 3
+  },
+  "build_synth_set1_all": {
+   "n": 800,
+   "elapsed_s": 1302.8750476837158,
+   "workers": 5
+  },
+  "build_degrade_set1_all": {
+   "n_tasks": 3764,
+   "elapsed_s": 8613.022258758545,
+   "workers": 5
+  }
+ }
+}

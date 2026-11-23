@@ -1,0 +1,12 @@
+exp:
+  patience: 6
+  kind: audio
+  train_conds:
+  - clean
+  - rand0
+  - rand1
+  lr: 0.001
+  epochs: 20
+  name: A-aug
+  batch_size: 32
+  max_samples_per_epoch: 2000

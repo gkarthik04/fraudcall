@@ -1,0 +1,10 @@
+exp:
+  patience: 6
+  kind: audio
+  train_conds:
+  - clean
+  lr: 0.001
+  epochs: 20
+  name: A
+  batch_size: 32
+  max_samples_per_epoch: 2000

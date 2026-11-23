@@ -1,0 +1,266 @@
+[
+ {
+  "id": "sample_1",
+  "label": 1,
+  "note": "fraud call the fused model scores correctly",
+  "audio_seconds": 60.0,
+  "processing_seconds": 4.0,
+  "times": [
+   10.0,
+   20.0,
+   30.0,
+   40.0,
+   50.0,
+   60.0
+  ],
+  "fused": [
+   0.937,
+   0.886,
+   0.999,
+   0.999,
+   0.999,
+   1.0
+  ],
+  "text": [
+   0.973,
+   0.944,
+   0.977,
+   0.983,
+   0.988,
+   0.991
+  ],
+  "audio": [
+   0.509,
+   0.541,
+   0.582,
+   0.581,
+   0.58,
+   0.577
+  ],
+  "fused_verdict": 1,
+  "text_verdict": 1,
+  "fused_first_alert_s": 50.0,
+  "text_first_alert_s": null,
+  "final_transcript": "Hello, Mr. Syria Prakash sir. I hope you're doing well, Jai. My name is Rohan and I'm calling from KFC Indie. Ah. Who is this? How did you get my number? I completely understand your concern, sir. We got your number from our database because you had placed an order with us recently. I'm calling abou"
+ },
+ {
+  "id": "sample_2",
+  "label": 1,
+  "note": "fraud call the fused model scores correctly",
+  "audio_seconds": 60.0,
+  "processing_seconds": 3.9,
+  "times": [
+   10.0,
+   20.0,
+   30.0,
+   40.0,
+   50.0,
+   60.0
+  ],
+  "fused": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": [
+   0.995,
+   0.996,
+   0.998,
+   0.998,
+   0.994,
+   0.99
+  ],
+  "audio": [
+   0.506,
+   0.535,
+   0.569,
+   0.567,
+   0.566,
+   0.565
+  ],
+  "fused_verdict": 1,
+  "text_verdict": 1,
+  "fused_first_alert_s": 10.0,
+  "text_first_alert_s": 10.0,
+  "final_transcript": "Hello, Madame. This is Rohan from the Electricity Ward. Sir, I'm calling to inform you that we have cut the power to your house due to a billing air die. Oh, okay. What kind of billing error my husband usually takes care of these things. Can you please explain? Yes, Madame. It seems there was an inc"
+ },
+ {
+  "id": "sample_3",
+  "label": 1,
+  "note": "hard case: fraud call near or below the decision threshold",
+  "audio_seconds": 60.0,
+  "processing_seconds": 4.5,
+  "times": [
+   10.0,
+   20.0,
+   30.0,
+   40.0,
+   50.0,
+   60.0
+  ],
+  "fused": [
+   0.008,
+   0.034,
+   0.08,
+   0.002,
+   0.001,
+   0.001
+  ],
+  "text": [
+   0.031,
+   0.171,
+   0.282,
+   0.063,
+   0.044,
+   0.056
+  ],
+  "audio": [
+   0.509,
+   0.54,
+   0.58,
+   0.577,
+   0.574,
+   0.57
+  ],
+  "fused_verdict": 0,
+  "text_verdict": 0,
+  "fused_first_alert_s": null,
+  "text_first_alert_s": null,
+  "final_transcript": "Hello, I'm Baskard Car. Someone's calling me saying they hit my car in a parking lot. Oh sorry to hear that sir. Can you please tell me more about the incident? What's your car's model, Jai? I'm not comfortable sharing that over the phone. Can you tell me who you are and how you got my number please"
+ },
+ {
+  "id": "sample_4",
+  "label": 0,
+  "note": "normal call the fused model scores correctly",
+  "audio_seconds": 60.0,
+  "processing_seconds": 3.9,
+  "times": [
+   10.0,
+   20.0,
+   30.0,
+   40.0,
+   50.0,
+   60.0
+  ],
+  "fused": [
+   0.92,
+   0.774,
+   0.076,
+   0.028,
+   0.672,
+   0.007
+  ],
+  "text": [
+   0.632,
+   0.788,
+   0.788,
+   0.727,
+   0.895,
+   0.598
+  ],
+  "audio": [
+   0.505,
+   0.531,
+   0.561,
+   0.562,
+   0.561,
+   0.56
+  ],
+  "fused_verdict": 0,
+  "text_verdict": 1,
+  "fused_first_alert_s": null,
+  "text_first_alert_s": null,
+  "final_transcript": "Hello, may I speak with B. Opatel, please? Who's calling? Sir, what's this about? My name is not important, ma 'am. I'm calling from a quid as small finance bank regarding your credit card count. Okay, Jai. How did you get my number? I don't recall giving it to you. The art of our records, ma 'am, I"
+ },
+ {
+  "id": "sample_5",
+  "label": 0,
+  "note": "normal call the fused model scores correctly",
+  "audio_seconds": 60.0,
+  "processing_seconds": 4.1,
+  "times": [
+   10.0,
+   20.0,
+   30.0,
+   40.0,
+   50.0,
+   60.0
+  ],
+  "fused": [
+   0.002,
+   0.001,
+   0.001,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": [
+   0.013,
+   0.013,
+   0.008,
+   0.007,
+   0.006,
+   0.007
+  ],
+  "audio": [
+   0.507,
+   0.539,
+   0.577,
+   0.576,
+   0.576,
+   0.575
+  ],
+  "fused_verdict": 0,
+  "text_verdict": 0,
+  "fused_first_alert_s": null,
+  "text_first_alert_s": null,
+  "final_transcript": "Hello sir, this is a call from Global Dacy. I am calling to inform you that your high value pen drive is out for delivery. On Thiccai, I was expecting it. What's the status, Jai? The delivery person will require an in -person OTP to complete the delivery. You can find this OTPN in your e -commerce p"
+ },
+ {
+  "id": "sample_6",
+  "label": 0,
+  "note": "normal call the fused model scores correctly",
+  "audio_seconds": 52.0,
+  "processing_seconds": 3.2,
+  "times": [
+   10.0,
+   20.0,
+   30.0,
+   40.0,
+   50.0,
+   52.0
+  ],
+  "fused": [
+   0.002,
+   0.002,
+   0.001,
+   0.001,
+   0.001,
+   0.001
+  ],
+  "text": [
+   0.02,
+   0.036,
+   0.014,
+   0.015,
+   0.012,
+   0.012
+  ],
+  "audio": [
+   0.504,
+   0.531,
+   0.563,
+   0.563,
+   0.563,
+   0.564
+  ],
+  "fused_verdict": 0,
+  "text_verdict": 0,
+  "fused_first_alert_s": null,
+  "text_first_alert_s": null,
+  "final_transcript": "Hello, is this Indurgy Course at you? Hans, yes, this is Indurgy. What's this about, sir? Good morning, ma 'am. This is a call from your vet's office. We just wanted to remind you that your pet's annual vaccinations are due. Okay, the Kai. Which pet are we talking about? Let me check that for you. A"
+ }
+]

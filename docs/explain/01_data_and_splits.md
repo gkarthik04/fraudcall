@@ -1,0 +1,4 @@
+# Data and splits (plain language)
+**What it does.** We take the written phone-call conversations from ICFD-31k (each one labelled fraud YES/NO), pick 800 of them with equal numbers of fraud and normal calls, and split them into train / validation / test.
+**Why these choices.** The dataset's own test and validation sets are almost all fraud, so they cannot tell us how many *normal* calls a detector wrongly flags. We therefore pool everything and split again ourselves. Each `session_id` holds 10 near-copies of one scenario (same story, different personas), so we keep a whole session on one side of the split: otherwise the model could "recognise" a scenario it saw in training and look better than it is.
+**Alternative.** Use the official splits (rejected: no normal calls in test) or split by conversation (rejected: leakage).

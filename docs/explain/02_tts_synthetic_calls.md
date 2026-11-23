@@ -1,0 +1,5 @@
+# Making the audio (text-to-speech)
+**What it does.** A text-to-speech (TTS) model reads each turn aloud: one voice for the caller and a different voice for the person called. Turns are joined with short pauses into a call of at most 60 seconds. This is the "generative AI" part: the call audio is generated, not recorded.
+**Why Piper.** Piper is a small neural voice model that runs 3-14 times faster than real time on a laptop CPU and has hundreds of built-in voices (we use a fixed pool of 24). The alternative, Meta MMS-TTS, runs slower than real time here, so it is only used for the second, unseen test set.
+**The caller speaks faster in fast-paced scams.** ICFD tags each call with a pace (fast / normal / slow). We use it to set the caller's speaking rate, so the audio carries a real tone/pace cue. This cue comes from the dataset's own labels, so it is a modelling assumption and not proof that real scammers sound like this.
+**Limit.** The voices are clean synthetic speech and Roman-script Hinglish is read with English pronunciation, so real calls will be harder.

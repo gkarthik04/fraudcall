@@ -1,0 +1,26 @@
+{
+ "models": {
+  "text": {
+   "name": "T-asr-aug",
+   "kind": "text",
+   "ckpt": "checkpoints/T-asr-aug_s0.pt",
+   "thr": 0.5838,
+   "thr5": 0.992870001
+  },
+  "audio": {
+   "name": "A-aug",
+   "kind": "audio",
+   "ckpt": "checkpoints/A-aug_s0.pt",
+   "thr": 0.5,
+   "thr5": 0.5792700009999999
+  },
+  "fused": {
+   "name": "F-aug",
+   "kind": "fusion",
+   "ckpt": "checkpoints/F-aug_s0.pt",
+   "thr": 0.64122,
+   "thr5": 0.999480001
+  }
+ },
+ "seed": 0
+}

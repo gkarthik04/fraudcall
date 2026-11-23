@@ -1,0 +1,168 @@
+{
+ "n_rows": 703,
+ "n_calls_set1": 150,
+ "n_calls_set2": 0,
+ "by_split_label": {
+  "train/0": 53,
+  "train/1": 52,
+  "val/0": 11,
+  "val/1": 11,
+  "test/0": 11,
+  "test/1": 12
+ },
+ "by_domain": {
+  "bank_payment_fraud": 12,
+  "ecommerce_marketplace": 9,
+  "utility_bill_service": 22,
+  "job_employment": 15,
+  "tech_support_account": 14,
+  "personal_emergency_extortion": 18,
+  "insurance_healthcare": 18,
+  "travel_lottery": 18,
+  "government_impersonation": 10,
+  "loan_shark_harassment": 14
+ },
+ "n_scenarios": 30,
+ "n_sessions": 136,
+ "by_pace": {
+  "normal": 93,
+  "fast": 56,
+  "slow": 1
+ },
+ "by_cond_rows": {
+  "set1/alaw": 23,
+  "set1/amrnb": 23,
+  "set1/bw8k": 23,
+  "set1/clean": 150,
+  "set1/gsm": 23,
+  "set1/hard": 23,
+  "set1/loss10": 23,
+  "set1/loss5": 23,
+  "set1/mulaw": 23,
+  "set1/opus12": 23,
+  "set1/opus8": 23,
+  "set1/rand0": 127,
+  "set1/rand1": 127,
+  "set1/snr10": 23,
+  "set1/snr20": 23,
+  "set1/snr5": 23
+ },
+ "duration_s": {
+  "mean": 53.41754666666667,
+  "median": 60.0,
+  "min": 24.415,
+  "max": 60.0,
+  "hist_10s_bins": [
+   0,
+   0,
+   6,
+   13,
+   19,
+   112
+  ]
+ },
+ "wer_per_condition": {
+  "set1/alaw": {
+   "mean": 0.14692367869148776,
+   "median": 0.12598425196850394,
+   "n": 23
+  },
+  "set1/amrnb": {
+   "mean": 0.14827254043308927,
+   "median": 0.1348314606741573,
+   "n": 23
+  },
+  "set1/bw8k": {
+   "mean": 0.1456160105944405,
+   "median": 0.11834319526627218,
+   "n": 23
+  },
+  "set1/clean": {
+   "mean": 0.13717709931110839,
+   "median": 0.11847403108621814,
+   "n": 150
+  },
+  "set1/gsm": {
+   "mean": 0.14884283891150324,
+   "median": 0.12727272727272726,
+   "n": 23
+  },
+  "set1/hard": {
+   "mean": 0.6716545580772209,
+   "median": 0.6877828054298643,
+   "n": 23
+  },
+  "set1/loss10": {
+   "mean": 0.15976285122628786,
+   "median": 0.1461187214611872,
+   "n": 23
+  },
+  "set1/loss5": {
+   "mean": 0.1546235447382868,
+   "median": 0.14553990610328638,
+   "n": 23
+  },
+  "set1/mulaw": {
+   "mean": 0.1495049128145816,
+   "median": 0.12903225806451613,
+   "n": 23
+  },
+  "set1/opus12": {
+   "mean": 0.14921290198551254,
+   "median": 0.13609467455621302,
+   "n": 23
+  },
+  "set1/opus8": {
+   "mean": 0.155467843584189,
+   "median": 0.12903225806451613,
+   "n": 23
+  },
+  "set1/rand0": {
+   "mean": 0.18549599574147863,
+   "median": 0.15384615384615385,
+   "n": 127
+  },
+  "set1/rand1": {
+   "mean": 0.18450747613986127,
+   "median": 0.15577889447236182,
+   "n": 127
+  },
+  "set1/snr10": {
+   "mean": 0.2193394373739047,
+   "median": 0.2127659574468085,
+   "n": 23
+  },
+  "set1/snr20": {
+   "mean": 0.15353902390188595,
+   "median": 0.13978494623655913,
+   "n": 23
+  },
+  "set1/snr5": {
+   "mean": 0.3287961014282272,
+   "median": 0.3120567375886525,
+   "n": 23
+  }
+ },
+ "gate": {
+  "clips_checked": 150,
+  "silent_or_short": [],
+  "clean_wer_mean": 0.13717709931110839,
+  "overlap_free": true,
+  "passed": true
+ },
+ "cost": {
+  "audio_gb_set1": 0.719012707,
+  "audio_mb_per_call_clean": 1.7094058933333334,
+  "asr_sec_per_call_mean": 7.8892,
+  "build_synth_set1_pilot": {
+   "n": 150,
+   "elapsed_s": 75.38680958747864,
+   "workers": 5
+  },
+  "build_degrade_set1_pilot": {
+   "n_tasks": 703,
+   "elapsed_s": 2142.2201116085052,
+   "workers": 3
+  }
+ }
+}
