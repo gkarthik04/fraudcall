@@ -23,3 +23,6 @@ checkpoints/
 results/error_analysis.json
 logs/
 .claude/
+
+# deployment staging folder (built by deploy/hf_space/push.py)
+deploy/_stage/
