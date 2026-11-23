@@ -9,7 +9,7 @@ A research project that measures how much phone-line degradation and speech-reco
 2. Renders each conversation as a call with a text-to-speech model (Piper; MMS-TTS for an unseen test set), one voice per speaker.
 3. Degrades the audio with a simulated phone channel (8 kHz, G.711, GSM, AMR-NB, Opus, noise, packet loss) and transcribes it with faster-whisper.
 4. Trains a BiLSTM text model, a CNN-BiGRU audio model and their fusion, evaluates them on a 14-condition grid, time-to-detection at 5 % false alarms and an unseen-TTS set, 3 seeds each.
-5. Serves a local Streamlit demo that scores a call in cumulative 10-second steps.
+5. Serves a local web app (landing page, live demo, results, method) that scores a call in cumulative 10-second steps.
 
 Plain-language notes on every component: `docs/explain/`. Phase 0 findings (hardware, data, TTS, codecs, ASR): `docs/phase0_report.md`. Licences: `docs/licenses.md`. Viva answers: `docs/viva.md`.
 
@@ -36,7 +36,7 @@ Download the Piper voices once into `data/models/piper/` (`en_US-libritts_r-medi
 make build-data   # sample 800 conversations, synthesize, apply channels, ASR, manifest, features, statistics (~4-5 h on 10 CPU cores)
 make train        # all experiments x 3 seeds, then evaluation (~7 h on 10 CPU cores, run in the background)
 make eval         # metric tables and figures (src/eval/run_eval.py, src/eval/figures.py)
-make demo         # streamlit run src/demo/app.py
+make demo         # web app at http://localhost:8000 (FastAPI backend in src/api, page in web/)
 make test         # unit tests (no session overlap, deterministic channel, model shapes)
 ```
 Extra scripts: `python -m scripts.make_demo` (checkpoints, thresholds, 6 samples), `python -m scripts.demo_backup` (records demo output on the 6 samples), `python -m scripts.demo_headless_test` (runs the Streamlit app headlessly), `bash scripts/train_extra_seeds.sh` then `python -m src.eval.extra_analysis` (seeds 3-4 and paired tests / alert rule), `python -m src.eval.calibration_threshold`, `python -m src.eval.tok512_compare`, `bash scripts/train_extra_seeds_aug.sh` (augmented-model seeds 3-4), `python -m src.eval.error_analysis`, `python -m scripts.make_slides`, `python -m scripts.md_to_docx` (report.docx; report.pdf via LibreOffice).

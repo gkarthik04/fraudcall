@@ -7,7 +7,7 @@ A full pipeline for robust fraud-call detection on phone speech, CPU only:
 * **Data build:** 800 balanced ICFD-31k conversations (402 sessions, 30 scenarios) split by `session_id` (557 / 119 / 124); Piper TTS calls (24-voice pool, caller pace from dataset labels), a deterministic phone-channel simulator (8 kHz, G.711 mu-law/A-law, GSM, AMR-NB, Opus 8/12 kbps, noise, packet loss), faster-whisper base ASR, manifest of 4,260 call variants (4.0 GB audio), plus an unseen-TTS test set (MMS-TTS, 124 calls x 4 conditions).
 * **Models:** BiLSTM text branch (1.51 M params), CNN-BiGRU audio branch (0.11 M), early fusion (1.68 M), late fusion, with and without channel augmentation, 3 seeds each.
 * **Evaluation:** 14-condition channel grid, F1/AUROC/PR-AUC/recall at 5 % false alarms, calibration, session-cluster bootstrap CIs, time-to-detection, unseen-TTS test, ablations, error analysis (251 errors grouped by cause, 5 hand-checked cases).
-* **Demo:** local Streamlit app (upload or 6 held-out samples, channel selector, live transcript and score chart, text-only vs fused comparison); verified headless and with a backup recording script.
+* **Demo and web app:** one local web app (`make demo`, http://localhost:8000): landing page, live demo (upload or 6 held-out samples, channel selector, streamed transcript and score chart, verdict, text-only vs fused comparison), results and method views; an older Streamlit version is kept (`make demo-streamlit`); verified headless and with a backup recording script.
 * **Documents:** `report/report.md` (+ `.docx`, `.pdf`), `report/slides.pptx` (15 slides), `docs/viva.md`, `docs/resume_lines.md`, `docs/explain/`, `docs/licenses.md`, `docs/phase0_report.md`, `PROGRESS.md`.
 
 ## Key results (test split, 124 calls, 3 seeds, mean ± sd; fraud positive)
@@ -47,7 +47,7 @@ python -m pytest tests -q                                 # 15 tests
 make train                                                # 11 experiments x 3 seeds + evaluation
 python -m src.eval.run_eval && python -m src.eval.figures # metric tables and figures -> results/, figures/
 python -m src.eval.error_analysis                         # error analysis
-python -m scripts.make_demo && make demo                  # demo config + 6 samples, then streamlit
+python -m scripts.make_demo && make demo                  # demo config + 6 samples, then the web app
 python -m scripts.demo_backup                             # backup recording of demo output
 python -m scripts.make_slides && python -m scripts.md_to_docx    # slides, report docx/pdf
 ```
